@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mean | Infinite Worksheets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', san-serif;
+        }
+
+        .container {
+            margin: 0 0.5in;
+        }
+
+        .row {
+            min-height: 250px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .problem {
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="problem">
+                <h2>Problem 01</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="problem">
+                <h2>Problem 02</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2>Problem 03</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="problem">
+                <h2>Problem 04</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2>Problem 05</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="problem">
+                <h2>Problem 06</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="problem">
+                <h2>Problem 07</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="problem">
+                <h2>Problem 08</h2>
+                <p></p>
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <div style="break-before: page;"></div> -->
+    <div class="solutions">
+        <h2>Solutions</h2>
+        <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script>
+        let fillArr = (arrr, idx) => {
+            for (let j = 0; j < idx; j++) {
+                let randomNum = Math.floor(Math.random() * 10) + 1;
+                arrr.push(randomNum);
+            }
+            return arrr;
+        }
+
+        let meanArr = (arra, idx) => {
+            let sum = 0;
+            arra.forEach(num => {
+                sum += num;
+            });
+            return sum / idx;
+        }
+
+        for (let i = 0; i < 8; i++) {
+            let amountOfNumbers = Math.floor(Math.random() * 5) + 5;
+            let arr = [];
+            let paragraphOfProblem = document.querySelectorAll('p')[i];
+            paragraphOfProblem.textContent = `Find the mean of the following data set.`;
+            let arrListItem = document.querySelectorAll('li')[i];
+            arrListItem.textContent = `\\( ${fillArr(arr, amountOfNumbers)} \\)`;
+            let sol = document.querySelectorAll('ol li')[i];
+            sol.textContent = `\\( ${meanArr(arr, amountOfNumbers).toFixed(2)} \\)`;
+        }
+    </script>
+</body>
+</html>
